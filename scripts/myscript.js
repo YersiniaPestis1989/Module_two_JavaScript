@@ -17,3 +17,5 @@ console. log (`Дневной бюджет — ${budgetDay} рублей`);
 // Третий способ
 console. log (`Дневной бюджет — ${(money + Number(profit)) / 30} рублей`);
 
+// let LowString = expenses.toLowerCase();
+console. log ("Массив expenses:", expenses.toLowerCase().split(', '));
