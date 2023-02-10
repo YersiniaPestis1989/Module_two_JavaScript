@@ -1,0 +1,15 @@
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\bin\Debug\net6.0\Module_two_JavaScript.exe
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\bin\Debug\net6.0\Module_two_JavaScript.deps.json
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\bin\Debug\net6.0\Module_two_JavaScript.runtimeconfig.json
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\bin\Debug\net6.0\Module_two_JavaScript.dll
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\bin\Debug\net6.0\Module_two_JavaScript.pdb
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.csproj.AssemblyReference.cache
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.GeneratedMSBuildEditorConfig.editorconfig
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.AssemblyInfoInputs.cache
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.AssemblyInfo.cs
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.csproj.CoreCompileInputs.cache
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.dll
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\refint\Module_two_JavaScript.dll
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.pdb
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\Module_two_JavaScript.genruntimeconfig.cache
+D:\ОБУЧЕНИЕ ИННОПОЛИС\Модуль 2\Практика\Module_two_JavaScript\obj\Debug\net6.0\ref\Module_two_JavaScript.dll
