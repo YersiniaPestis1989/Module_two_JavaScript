@@ -1,21 +1,34 @@
 "use sctrict"
-let money = 30000;
-let profit = "10000";
-let expenses = "питание, коты, здоровье, квартплата";
-let purpose = 400000;
-let period = 12;
-let budgetDay = (money + Number(profit)) / 30;
+const purpose = 400000;
+let money =  Number(prompt("Ваш месячный доход", 1000));
+let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата");
+let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
+let deposit =  confirm("Есть ли у вас вклад в банке?")
 
-console. log ('Тип данных переменной money —', typeof money);
-console. log ("Тип данных переменной", money, typeof profit);
-console. log ("Период равен", period, "месяцев");
-console. log ("Цель заработать", purpose, "рублей");
-// Первый способ
-console. log ("Дневной бюджет —", budgetDay, "рублей");
-// Второй способ
+while (isNaN(money)  || isNaN(amount)) {
+    alert("Введите данные заново, обращая внимание на формат");
+    let money =  Number(prompt("Ваш месячный доход", 1000));
+    let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
+}
+
+let budgetMonth = money - amount;
+let budgetDay = Math.floor((money - amount) / 30);
+console. log (`Месячный бюджет — ${budgetMonth} рублей`);
+console. log (`Накопить ${purpose} рублей получится через ${Math.ceil(purpose/budgetMonth)} месяцев`);
 console. log (`Дневной бюджет — ${budgetDay} рублей`);
-// Третий способ
-console. log (`Дневной бюджет — ${(money + Number(profit)) / 30} рублей`);
 
-// let LowString = expenses.toLowerCase();
-console. log ("Массив expenses:", expenses.toLowerCase().split(', '));
+if (budgetDay > 6000)
+{
+    console.log  ("У вас высокий уровень дохода");
+}
+else if  (budgetDay > 3000 && budgetDay < 6000)
+{
+    console.log  ("У вас средний уровень дохода");
+}
+else if  (budgetDay > 0 && budgetDay < 3000)
+{
+    console.log  ("К сожалению, у вас уровень дохода ниже среднего");
+}
+else if (budgetDay < 0) {
+    console.log  ("Что-то пошло не так");
+}
