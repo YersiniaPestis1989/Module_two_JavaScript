@@ -14,22 +14,22 @@ while (isNaN(money)  || isNaN(amount)) {
 
 let budgetMonth = money - amount;
 let budgetDay = Math.floor((money - amount) / 30);
-console. log (`Месячный бюджет — ${budgetMonth} рублей`);
-console. log (`Накопить ${purpose} рублей получится через ${Math.ceil(purpose/budgetMonth)} месяцев`);
-console. log (`Дневной бюджет — ${budgetDay} рублей`);
+console.log (`Месячный бюджет — ${budgetMonth} рублей`);
+console.log (`Накопить ${purpose} рублей получится через ${Math.ceil(purpose/budgetMonth)} месяцев`);
+console.log (`Дневной бюджет — ${budgetDay} рублей`);
 
 if (budgetDay > 6000)
 {
-    console.log  ("У вас высокий уровень дохода");
+    console.log("У вас высокий уровень дохода");
 }
 else if  (budgetDay > 3000 && budgetDay < 6000)
 {
-    console.log  ("У вас средний уровень дохода");
+    console.log("У вас средний уровень дохода");
 }
 else if  (budgetDay > 0 && budgetDay < 3000)
 {
-    console.log  ("К сожалению, у вас уровень дохода ниже среднего");
+    console.log("К сожалению, у вас уровень дохода ниже среднего");
 }
 else if (budgetDay < 0) {
-    console.log  ("Что-то пошло не так");
+    console.log("Что-то пошло не так");
 
