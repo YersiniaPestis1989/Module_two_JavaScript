@@ -1,4 +1,5 @@
 "use sctrict"
+
 const purpose = 400000;
 let money =  Number(prompt("Ваш месячный доход", 1000));
 let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата");
@@ -31,4 +32,4 @@ else if  (budgetDay > 0 && budgetDay < 3000)
 }
 else if (budgetDay < 0) {
     console.log  ("Что-то пошло не так");
-}
+
