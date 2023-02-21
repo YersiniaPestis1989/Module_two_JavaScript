@@ -1,35 +1,37 @@
-"use sctrict"
+let week = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+let arr = ["3578", "456", "76435", "46546", "10158", "465468", "98756"];
+let date = new Date();
+let now = week[date.getDay()];
+print (week);
+document.write('______________________________'+ "<br />");
+print2(arr);
 
-const purpose = 400000;
-let money =  Number(prompt("Ваш месячный доход", 1000));
-let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата");
-let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
-let deposit =  confirm("Есть ли у вас вклад в банке?")
+alert(now);
 
-while (isNaN(money)  || isNaN(amount)) {
-    alert("Введите данные заново, обращая внимание на формат");
-    let money =  Number(prompt("Ваш месячный доход", 1000));
-    let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
+function print(array) {
+    document.write('<b>Дни недели</b> <br />')
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == "суббота" || array[i] == "воскресенье"){
+            document.write(array[i].bold() + "<br />")
+            
+        }
+        else if (array[i] == now){
+            document.write("текущий день — " + array[i].italics() + "<br />")
+        }
+        else {
+            document.write(array[i] + "<br />");
+        }
+    }
 }
 
-let budgetMonth = money - amount;
-let budgetDay = Math.floor((money - amount) / 30);
-console.log (`Месячный бюджет — ${budgetMonth} рублей`);
-console.log (`Накопить ${purpose} рублей получится через ${Math.ceil(purpose/budgetMonth)} месяцев`);
-console.log (`Дневной бюджет — ${budgetDay} рублей`);
-
-if (budgetDay > 6000)
-{
-    console.log("У вас высокий уровень дохода");
-}
-else if  (budgetDay > 3000 && budgetDay < 6000)
-{
-    console.log("У вас средний уровень дохода");
-}
-else if  (budgetDay > 0 && budgetDay < 3000)
-{
-    console.log("К сожалению, у вас уровень дохода ниже среднего");
-}
-else if (budgetDay < 0) {
-    console.log("Что-то пошло не так");
+function print2(array) {
+    document.write('<b>Числа</b> <br />')
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].startsWith('3') || array[i].startsWith('7')) {
+            document.write(array[i].bold() + "<br />")
+        }
+        else {
+            console.log("ничего не найдено");
+        }
+    }
 }
