@@ -1,3 +1,4 @@
+
 "use sctrict"
 const purpose = 400000; //цель
 let profit = "10000"; //дополнительный доход
@@ -38,4 +39,4 @@ else if  (budgetDay > 0 && budgetDay < 3000)
 }
 else if (budgetDay < 0) {
     console.log("Что-то пошло не так");
-}
+
