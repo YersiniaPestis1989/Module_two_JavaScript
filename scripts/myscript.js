@@ -16,7 +16,7 @@ while (isNaN(money)  || isNaN(amount) || isNaN(extraMoney)) {
 }
 
 const getAccumulatedIncome = (x, y, z) => {return (x + y) - z};
-const getTargetMonth = (sum, purpose) => {Math.ceil(purpose/sum)};
+const getTargetMonth = (sum, purpose) => {return Math.ceil(purpose/sum)};
 
 let accumulatedIncome = getAccumulatedIncome(money, extraMoney, amount); // прибыль
 let budgetDay = Math.floor(accumulatedIncome/30); // бюджет на день
