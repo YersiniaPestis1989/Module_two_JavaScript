@@ -1,35 +1,30 @@
 "use sctrict"
 
-const purpose = 400000;
-let money =  Number(prompt("Ваш месячный доход", 1000));
-let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата");
-let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
-let deposit =  confirm("Есть ли у вас вклад в банке?")
-
-while (isNaN(money)  || isNaN(amount)) {
-    alert("Введите данные заново, обращая внимание на формат");
-    money =  Number(prompt("Ваш месячный доход", 1000));
-    amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
+const salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+const studentScores = {
+    Коля: '99',
+    Вася: '35',
+    Петя: '70',
+    Таня: '95',
+    Оля: '50',
+    Саша: '20'
 }
 
-let budgetMonth = money - amount;
-let budgetDay = Math.floor((money - amount) / 30);
-console.log (`Месячный бюджет — ${budgetMonth} рублей`);
-console.log (`Накопить ${purpose} рублей получится через ${Math.ceil(purpose/budgetMonth)} месяцев`);
-console.log (`Дневной бюджет — ${budgetDay} рублей`);
+let sum = 0;
+for (key in salaries) {
+    sum += salaries[key]
+}
+console.log(`Сумма всех зарплат равна ${sum}`);
 
-if (budgetDay > 6000)
-{
-    console.log("У вас высокий уровень дохода");
+
+for(key in studentScores){
+    if (+studentScores[key] < 80){
+        console.log(`Студент ${key} не проходит отбор`);
+        delete studentScores[key]
+    }
 }
-else if  (budgetDay > 3000 && budgetDay < 6000)
-{
-    console.log("У вас средний уровень дохода");
-}
-else if  (budgetDay > 0 && budgetDay < 3000)
-{
-    console.log("К сожалению, у вас уровень дохода ниже среднего");
-}
-else if (budgetDay < 0) {
-    console.log("Что-то пошло не так");
-}
+console.log(`Отличники у нас: `, studentScores);
