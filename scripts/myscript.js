@@ -1,4 +1,3 @@
-"use sctrict"
 
 const salaries = {
     John: 100,
@@ -18,6 +17,7 @@ let sum = 0;
 for (key in salaries) {
     sum += salaries[key]
 }
+
 console.log(`Сумма всех зарплат равна ${sum}`);
 
 
