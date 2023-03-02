@@ -1,41 +1,57 @@
 "use sctrict"
-const purpose = 400000; //цель
-let profit = "10000"; //дополнительный доход
-let money =  Number(prompt("Ваш месячный доход", 1000)); // месячный доход
-let extraMoney = Number(prompt(`Перечислите возможный доход за ваши дополнительные работы: ${profit}?`)); // возможный доход
-let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата"); // возможные расходы
-let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000)); // обязательные расходы
-let deposit =  confirm("Есть ли у вас вклад в банке?")
+let userNumber = Number(prompt("Введите любое число от 1 до 10"));
 
-while (isNaN(money)  || isNaN(amount) || isNaN(extraMoney)) {
-    alert("Введите данные заново, обращая внимание на формат");
-    let money =  Number(prompt("Ваш месячный доход", 1000));
-    let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
-    let extraMoney = promt(`Перечислите возможный доход за ваши дополнительные работы: ${profit}?`);
-}
+// while (isNaN(userNumber) || (userNumber > 10)) {
+//     alert("Введите данные заново, обращая внимание на формат");
+//     userNumber = Number(prompt("Введите любое число от 1 до 10"));
+// }
+// console.log("мое число "+userNumber);
+// console.log("загаданноен число "+number);
 
-const getAccumulatedIncome = (x, y, z) => {return (x + y) - z};
-const getTargetMonth = (sum, purpose) => {Math.ceil(purpose/sum)};
-
-let accumulatedIncome = getAccumulatedIncome(money, extraMoney, amount); // прибыль
-let budgetDay = Math.floor(accumulatedIncome/30); // бюджет на день
-
-console.log(`Ваш бюджет на месяц с учетом ваших расходов составляет:  ${getAccumulatedIncome(money, extraMoney, amount)} рублей`);
-console.log(`Ваша цель накопить ${purpose} рублей с учетом всех ваших расходов будет достигнута через`, getTargetMonth(accumulatedIncome, purpose) + ' месяца');
-console.log(`Дневной бюджет: ${budgetDay} рублей`);
-
-if (budgetDay > 6000)
-{
-    console.log("У вас высокий уровень дохода");
+function bot(b) {
+    // let number = Math.floor(Math.random() * 10) + 1;
+    userNumber = Number(prompt("Введите любое число от 1 до 10"));
+    let number = 5;
+    console.log("загаданноен число "+number);
+    let i = 0; 
+    let tryP = 10; 
+    for (tryP--, i++) {
+    if (number == b && i < tryP) {
+        alert("Вы угадали!");
+        if (result = confirm("Вы угадали!!! Хотели бы сыграть еще?")){
+            bot(b);
+        }
+    }
+    if (number < b && i < tryP) {
+        alert(`Загаданное число меньше, у вас осталось ${tryP-1} попыток`);
+        // tryP--;
+        // i++;
+        console.log(`i равно ${i}, а try равно ${tryP}`);
+        bot(b)
+    }
+    if (number > b) {
+        alert(`Загаданное число больше, у вас осталось ${tryP-1} попыток`);
+        // tryP--;
+        // i++;
+        console.log(`i равно ${i}, а try равно ${tryP}`);
+        bot(b)
+    }
+    if (isNaN(b)) {
+        alert(`Это не число, у вас осталось ${tryP-1} попыток`);
+        // tryP--;
+        // i++;
+        console.log(`i равно ${i}, а try равно ${tryP}`);
+        bot(b)
+    }
+    else{
+        if (result = confirm("Попытки закончились, хотите сыграть еще?")){
+            bot(b);
+        }
+        else {
+            alert("Ну и ладно, пока!");
+            
+        }
+      }
+    }
 }
-else if  (budgetDay > 3000 && budgetDay < 6000)
-{
-    console.log("У вас средний уровень дохода");
-}
-else if  (budgetDay > 0 && budgetDay < 3000)
-{
-    console.log("К сожалению, у вас уровень дохода ниже среднего");
-}
-else if (budgetDay < 0) {
-    console.log("Что-то пошло не так");
-}
+bot(userNumber);
