@@ -8,8 +8,8 @@ let deposit =  confirm("Есть ли у вас вклад в банке?")
 
 while (isNaN(money)  || isNaN(amount)) {
     alert("Введите данные заново, обращая внимание на формат");
-    let money =  Number(prompt("Ваш месячный доход", 1000));
-    let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
+    money =  Number(prompt("Ваш месячный доход", 1000));
+    amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
 }
 
 let budgetMonth = money - amount;
