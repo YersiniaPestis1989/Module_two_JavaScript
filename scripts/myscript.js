@@ -1,42 +1,30 @@
 
-"use sctrict"
-const purpose = 400000; //цель
-let profit = "10000"; //дополнительный доход
-let money =  Number(prompt("Ваш месячный доход", 1000)); // месячный доход
-let extraMoney = Number(prompt(`Перечислите возможный доход за ваши дополнительные работы: ${profit}?`)); // возможный доход
-let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата"); // возможные расходы
-let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000)); // обязательные расходы
-let deposit =  confirm("Есть ли у вас вклад в банке?")
-
-while (isNaN(money)  || isNaN(amount) || isNaN(extraMoney)) {
-    alert("Введите данные заново, обращая внимание на формат");
-    let money =  Number(prompt("Ваш месячный доход", 1000));
-    let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000));
-    let extraMoney = promt(`Перечислите возможный доход за ваши дополнительные работы: ${profit}?`);
+const salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+const studentScores = {
+    Коля: '99',
+    Вася: '35',
+    Петя: '70',
+    Таня: '95',
+    Оля: '50',
+    Саша: '20'
 }
 
-const getAccumulatedIncome = (x, y, z) => {return (x + y) - z};
-const getTargetMonth = (sum, purpose) => {return Math.ceil(purpose/sum)};
+let sum = 0;
+for (key in salaries) {
+    sum += salaries[key]
+}
 
-let accumulatedIncome = getAccumulatedIncome(money, extraMoney, amount); // прибыль
-let budgetDay = Math.floor(accumulatedIncome/30); // бюджет на день
+console.log(`Сумма всех зарплат равна ${sum}`);
 
-console.log(`Ваш бюджет на месяц с учетом ваших расходов составляет:  ${getAccumulatedIncome(money, extraMoney, amount)} рублей`);
-console.log(`Ваша цель накопить ${purpose} рублей с учетом всех ваших расходов будет достигнута через`, getTargetMonth(accumulatedIncome, purpose) + ' месяца');
-console.log(`Дневной бюджет: ${budgetDay} рублей`);
 
-if (budgetDay > 6000)
-{
-    console.log("У вас высокий уровень дохода");
+for(key in studentScores){
+    if (+studentScores[key] < 80){
+        console.log(`Студент ${key} не проходит отбор`);
+        delete studentScores[key]
+    }
 }
-else if  (budgetDay > 3000 && budgetDay < 6000)
-{
-    console.log("У вас средний уровень дохода");
-}
-else if  (budgetDay > 0 && budgetDay < 3000)
-{
-    console.log("К сожалению, у вас уровень дохода ниже среднего");
-}
-else if (budgetDay < 0) {
-    console.log("Что-то пошло не так");
-}
+console.log(`Отличники у нас: `, studentScores);
