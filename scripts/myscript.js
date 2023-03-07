@@ -9,7 +9,7 @@ let deposit =  confirm("Есть ли у вас вклад в банке?")
 
 function proof(item, msg) {
     while (isNaN(item) || (item ==="") || item === 0){ item = Number(prompt(msg))}
-}
+
 proof(money, `Ваш месячный доход`);
 proof(amount, `Во сколько обойдутся обязательные статьи расходов?`);
 proof(extraMoney, `Перечислите возможный доход за ваши дополнительные работы: ${profit}?`);
@@ -88,3 +88,4 @@ const stringProof = (str) => {
         console.log(`Это не строка`)}
 }
 stringProof(userString)
+
