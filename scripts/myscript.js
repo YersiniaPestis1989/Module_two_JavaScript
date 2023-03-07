@@ -87,4 +87,4 @@ const stringProof = (str) => {
     else{
         console.log(`Это не строка`)}
 }
-stringProof(userString)
+stringProof(userString);
