@@ -1,90 +1,91 @@
 "use sctrict"
-const purpose = 400000; //цель
-let profit = "10000"; //дополнительный доход
-let money =  Number(prompt("Ваш месячный доход", 1000)); // месячный доход
-let extraMoney = Number(prompt(`Перечислите возможный доход за ваши дополнительные работы: ${profit}?`)); // возможный доход
-let expenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую", "еда, квартплата"); // возможные расходы
-let amount =  Number(prompt("Во сколько обойдутся обязательные статьи расходов?", 1000)); // обязательные расходы
-let deposit =  confirm("Есть ли у вас вклад в банке?")
+let income = document.querySelector(`#income`)
+let money; // месячный доход
+income.addEventListener(`input`, (e) => {
+    money = Number(e.target.value);
+})
 
-function proof(item, msg) {
-    while (isNaN(item) || (item ==="") || item === 0){ item = Number(prompt(msg))}
-}
-proof(money, `Ваш месячный доход`);
-proof(amount, `Во сколько обойдутся обязательные статьи расходов?`);
-proof(extraMoney, `Перечислите возможный доход за ваши дополнительные работы: ${profit}?`);
+let additionalIncome = document.querySelector(`#additionalIncome`);
+let profit; //дополнительный доход
+additionalIncome.addEventListener(`input`, (e) => {
+    profit = e.target.value;
+})
+
+let sumAdditionalIncome = document.querySelector(`#sumAdditionalIncome`);
+let extraMoney; // возможный доход
+sumAdditionalIncome.addEventListener(`input`, (e) => {
+    extraMoney = Number(e.target.value);
+})
+
+let expensesInput = document.querySelector(`#expenses`);
+let expenses; // возможные расходы
+expensesInput.addEventListener(`input`, (e) => {
+    expenses = e.target.value;
+});
+
+let amountInput = document.querySelector(`#amount`);
+let amount; // обязательные расходы
+amountInput.addEventListener(`input`, (e) => {
+    amount = Number(e.target.value);
+});
+
+let savings = document.querySelector(`#savings`);
+let purpose; //цель
+savings.addEventListener(`input`, (e) => {
+    purpose = Number(e.target.value);
+})
+
+let perionInput = document.querySelector(`#period`);
+let period; // период накопления
+perionInput.addEventListener(`input`, (e) => {
+    period = Number(e.target.value);
+})
 
 const getAccumulatedIncome = (x, y, z) => {return (x + y) - z};
 const getTargetMonth = (sum, purpose) => {return Math.ceil(purpose/sum)};
 
-let accumulatedIncome = getAccumulatedIncome(money, extraMoney, amount); // прибыль
-let budgetDay = Math.floor(accumulatedIncome/30); // бюджет на день
+const btnResult = document.querySelector(".calculator__items-submit");
+btnResult.addEventListener(`click`, () => {
+    let AccumulatedIncome = getAccumulatedIncome(money, extraMoney, amount);
+    let budgetDay = Math.floor(AccumulatedIncome/30);
+    let budgetMounth = Math.ceil(purpose/AccumulatedIncome);
+    
 
-console.log(`Ваш бюджет на месяц с учетом ваших расходов составляет:  ${accumulatedIncome} рублей`);
-
-if(getTargetMonth(accumulatedIncome, purpose) < 0){
-    console.log(`Цель не будет достигнута`);
-}
-else {
-    console.log(`Ваша цель накопить ${purpose} рублей с учетом всех ваших расходов будет достигнута через`, getTargetMonth(accumulatedIncome, purpose) + ' месяца');
-}
-
-console.log(`Дневной бюджет: ${budgetDay} рублей`);
-
-if (budgetDay > 6000)
-{
-    console.log("У вас высокий уровень дохода");
-}
-else if  (budgetDay > 3000 && budgetDay < 6000)
-{
-    console.log("У вас средний уровень дохода");
-}
-else if  (budgetDay > 0 && budgetDay < 3000)
-{
-    console.log("К сожалению, у вас уровень дохода ниже среднего");
-}
-else if (budgetDay < 0) {
-    console.log("Что-то пошло не так");
-}
-
-/*Усложненное задание*/
-const arr = [`458`,`25`,`87`,`11`,`654`,`33`,`264`];
-//Первый способ
-const arr2 = arr.map((item => {
-    if(item.startsWith(`2`) || item.startsWith(`4`)){
-        console.log(item)
-    }
-}
-))
-console.log(`Первый способ`);
-console.log(arr2);
-//второй способ
-console.log(`Второй способ`);
-arr.forEach(element => {
-    if(element.startsWith(`2`) || element.startsWith(`4`)){
-        console.log(element);
-    }
-});
-//третий способ
-console.log(`Третий способ`);
-arr.filter((item) => {
-    if(item.startsWith(`2`) || item.startsWith(`4`)){
-        console.log(item)
-    }
+    document.querySelector(`#sumMoney`).textContent = AccumulatedIncome; // прибыль
+    document.querySelector(`#sumMoneyDay`).textContent = budgetDay; // бюджет на день
+    document.querySelector(`#sumMoneyPurpose`).textContent = purpose;
+    document.querySelector(`#purpose`).textContent = getTargetMonth(AccumulatedIncome, purpose);
+    if (Math.floor(budgetDay) > 6000)
+        {
+            document.querySelector(`#incomeLevel`).textContent = "У вас высокий уровень дохода";
+        }
+        else if  (budgetDay > 3000 && budgetDay < 6000)
+        {
+            document.querySelector(`#incomeLevel`).textContent = "У вас средний уровень дохода";
+        }
+        else if  (budgetDay > 0 && budgetDay < 3000)
+        {
+            document.querySelector(`#incomeLevel`).textContent = "К сожалению, у вас уровень дохода ниже среднего";
+        }
+        else if (budgetDay < 0) {
+            document.querySelector(`#incomeLevel`).textContent = "Что-то пошло не так";
+        }
 })
 
+// function proof(item, msg) {
+//     while (isNaN(item) || (item ==="") || item === 0){ item = Number(prompt(msg))}
+// }
+// proof(money, `Ваш месячный доход`);
+// proof(amount, `Во сколько обойдутся обязательные статьи расходов?`);
+// proof(extraMoney, `Перечислите возможный доход за ваши дополнительные работы: ${profit}?`);
 
-let userString = 10;
 
-const stringProof = (str) => {
-    if (typeof str == "string") 
-    {str = str.trim();
-        if(str.length >30){
-            str = str.slice(0, 30) + '...';
-        }
-        console.log(str);
-    }
-    else{
-        console.log(`Это не строка`)}
-}
-stringProof(userString)
+
+
+// if(getTargetMonth(accumulatedIncome, purpose) < 0){
+//     console.log(`Цель не будет достигнута`);
+// }
+// else {
+//     console.log(`Ваша цель накопить ${purpose} рублей с учетом всех ваших расходов будет достигнута через`, getTargetMonth(accumulatedIncome, purpose) + ' месяца');
+// }
+
