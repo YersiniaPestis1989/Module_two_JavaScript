@@ -80,8 +80,6 @@ btnResult.addEventListener(`click`, () => {
 // proof(extraMoney, `Перечислите возможный доход за ваши дополнительные работы: ${profit}?`);
 
 
-
-
 // if(getTargetMonth(accumulatedIncome, purpose) < 0){
 //     console.log(`Цель не будет достигнута`);
 // }
