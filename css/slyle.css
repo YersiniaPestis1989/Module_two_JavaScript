@@ -2,6 +2,11 @@
     box-sizing: border-box;
     }
     
+body {
+    background-image: url(../image/back.jpg);
+    font-family: oswald;
+}
+
     .calculator {
         display: flex;
         justify-content: center;
@@ -16,12 +21,17 @@
         margin-top: 40px;
         padding: 10px 20px;
         cursor: pointer;
+        font-family: oswald;
+        background-color:darkgrey;
+        border-radius: 3px;
     }
     
     .calculator__result {
         border: 1px solid;
+        border-radius: 10px;
         width: 30%;
         padding: 30px;
+        background-color:lightgrey;
     }
     
     .item__result {
