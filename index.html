@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="container">
+        <form class="form">
+
+        <label class="form-label">
+        <input type="text" class="form-label__input" id="income" placeholder="Ваш месячный доход" />
+        <p class="form-label__text">Ваш месячный доход</p>
+        <div class="form-label__income-level"></div>
+        </label>
+
+        <label for="expenses" class="form-label">
+        <input type="text" class="form-label__input" id="expenses" placeholder="Перечислите возможные расходы за рассчитываемый период
+                через запятую"/>
+        <p class="form-label__text">
+            Перечислите возможные расходы за рассчитываемый период через запятую
+        </p>
+        </label>
+
+        <label for="expenses-level" class="form-label">
+        <input type="text" class="form-label__input" id="expenses-level"
+            placeholder="Во сколько обойдутся обязательные статьи расходов?" />
+        <p class="form-label__text">
+            Во сколько обойдутся обязательные статьи расходов?
+        </p>
+        </label>
+
+        <label for="deposit" class="form__checkbox">
+        <span class="form__checkbox-text">У меня есть вклад в банке</span>
+        <input type="checkbox" id="deposit" class="form__checkbox-input" />
+        </label>
+
+        <button class="form__button" id="button" type="button" disabled>
+        ОТПРАВИТЬ
+        </button>
+
+    </form>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

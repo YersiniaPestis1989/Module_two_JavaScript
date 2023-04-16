@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap);
+
+body {
+margin: 0;
+padding: 0;
+font-family: "Inter", sans-serif;
+}
+
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.form {
+display: flex;
+flex-direction: column;
+padding: 63px 45px 45px 45px;
+background-color: #3c3c3c;
+width: 506px;
+height: 547px;
+border-radius: 20px;
+box-sizing: border-box;
+}
+
+.form-label {
+display: flex;
+flex-wrap: wrap;
+box-sizing: border-box;
+align-items: center;
+position: relative;
+margin-bottom: 50px;
+}
+
+.form-label__text {
+padding: 10px 40px 10px 21px;
+position: absolute;
+color: #7d7d7d;
+font-size: 12px;
+pointer-events: none;
+}
+
+.form-label__input {
+width: 100%;
+padding: 10px 40px 10px 21px;
+box-sizing: border-box;
+height: 50px;
+border-radius: 10px;
+border: none;
+color: #7d7d7d;
+}
+
+.form-label__input::placeholder {
+color: transparent;
+}
+.form-label__input:not(:placeholder-shown) + .form-label__text {
+display: none;
+}
+
+.form-label__input:focus {
+outline: none;
+}
+
+.form__income-level {
+border-radius: 10px 10px 0 0;
+width: 100%;
+box-sizing: border-box;
+height: 50px;
+}
+
+.form-label__income-level {
+display: none;
+box-sizing: border-box;
+height: 26px;
+width: 100%;
+background-color: #5ba150;
+border-radius: 0 0 10px 10px;
+position: absolute;
+bottom: -26px;
+}
+
+.form__income-level ~ .form-label__income-level {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 12px;
+color: #e7e7e7;
+}
+
+.form__checkbox {
+margin-top: -25px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.form__checkbox-text {
+color: #ffc700;
+font-size: 17px;
+line-height: 21px;
+}
+
+.form__checkbox-input {
+width: 16px;
+height: 16px;
+}
+
+.form__button {
+margin-top: 85px;
+align-self: center;
+padding: 20px 110px;
+border-radius: 50px;
+background-color: #ffc700;
+border: none;
+cursor: pointer
+}
+
+.form__button:disabled {
+background-color: #b9b9b9;
+color: black;
+}
